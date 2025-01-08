@@ -1,0 +1,37 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: customer
+  data:
+    mongodb:
+      username: user
+      password: password
+      host: mongodb
+      port: 27017
+      database: customer
+      authentication-database: admin
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: true
+      config:
+        enabled: true
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
