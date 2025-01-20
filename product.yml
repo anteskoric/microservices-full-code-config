@@ -11,7 +11,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-    open-in-view: false
+    open-in-view: false    # Best practice to disable
     flyway:
       baseline-on-migrate: true
     database: postgresql
@@ -43,7 +43,7 @@ management:
     tracing:
       endpoint: http://zipkin:9411/api/v2/spans
 chaos-engineering:
-  wait: true
+  wait: false
   duration: 60000
   kill-service: false
   return-500: false
