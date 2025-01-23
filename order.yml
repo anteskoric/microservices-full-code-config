@@ -24,7 +24,7 @@ spring:
         enabled: true
 application:
   config:
-    customer-url: http://wrong_url
+    customer-url: http://customer:8090/api/v1/customers
     payment-url: http://payment:8060/api/v1/payments
     product-url: http://product:8050/api/v1/products
 management:
